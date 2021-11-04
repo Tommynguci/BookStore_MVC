@@ -1,0 +1,84 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@model IEnumerable<DataModel.Product>
+
+
+<div id="slider">
+    <div class="slider-product-info">
+        <div class="heading">Dr.Stone</div>
+        <div class="desc">Tìm mua truyện giấy tại KimDong.vn</div>
+        <a href="/productdetail" class="btn">Xem thông tin</a>
+    </div>
+</div>
+
+
+<div id="content">
+    <div class="content-title">Mới cập nhật</div>
+
+    <div class="content-container">
+        @*@foreach (var product in Model)
+            {
+                <div class="card-product">
+                    <img src="@product.Image_url" alt="@product.Product_title" href="/productdetail/@product.Product_id" class="product-img">
+                    <div class="product-info">
+                        <div class="product-heading">@product.Product_title</div>
+                        <div class="product-price">
+                            Giá bán:
+                            <span class="product-price-value-strikethrough">@product.Price</span>
+                            <span class="product-price-value">@product.Price</span>
+                        </div>
+                        <div class="product-desc">@product.Description</div>
+                    </div>
+                </div>
+            }*@
+
+
+        <div ng-repeat="product in products" class="card-product">
+            <a href="/home/detail/{{product.Product_id}}">
+                <img src="{{product.Image_url}}" alt="{{product.Product_title}}" class="product-img">
+            </a>
+            <div class="product-info">
+                <div class="product-heading">{{product.Product_title}}</div>
+                <div class="product-price">
+                    Giá bán:
+                    @*<span class="product-price-value-strikethrough">{{product.Price}}</span>*@
+                    <span class="product-price-value">{{product.Price}}</span>
+                </div>
+                <div class="product-desc">{{product.Description}}</div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--<div class="content-title">Lấy sản phẩm theo loại</div>
+    <div class="dropdown-menu">
+        <ul ng-controller="ProductController" ng-repeat="category in categories">
+            Thể loại
+            <li><a href="/" ng-click="selectCategory(category.Category_id)">{{category.Category_name}}</a></li>
+        </ul>
+    </div>
+    <div class="content-container" ng-controller="CatgoryController">
+
+        <div ng-repeat="product in product_category" class="card-product">
+            <a href="/home/detail/{{product.Product_id}}">
+                <img src="{{product.Image_url}}" alt="{{product.Product_title}}" class="product-img">
+            </a>
+            <div class="product-info">
+                <div class="product-heading">{{product.Product_title}}</div>
+                <div class="product-price">
+                    Giá bán:-->
+                    @*<span class="product-price-value-strikethrough">{{product.Price}}</span>*@
+                    <!--<span class="product-price-value">{{product.Price}}</span>
+                </div>
+                <div class="product-desc">{{product.Description}}</div>
+            </div>
+        </div>
+    </div>-->
+
+    <div class="btn-prev-next-page">
+        <button class="prev-page"><i class="fas fa-angle-left content-icon"></i>Trang trước</button>
+        <button class="next-page">Trang sau<i class="fas fa-angle-right content-icon"></i></button>
+    </div>
+</div>

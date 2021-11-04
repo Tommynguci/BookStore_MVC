@@ -1,0 +1,110 @@
+﻿
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="~/Public/css/content.css" rel="stylesheet" />
+</head>
+<body ng-app="MyApp">
+    <div class="product-detail-container" ng-controller="ProductController" ng-repeat="product in detail">
+
+        <div class="product-info">
+
+            <div class="col-left">
+
+                <div class="product-img">
+                    <img src="{{product.Image_url}}" alt="" srcset="">
+                </div>
+
+            </div>
+
+            <div class="col-right">
+
+                <div class="product-title">
+                    <span>{{product.Product_title}}</span>
+                </div>
+
+                <span class="updateAt">[Cập nhật gần nhất: {{product.Created_date_time}}]</span>
+
+                <span class="author">Tác giả: {{product.Author}}</span>
+
+                <span class="status">Tình trạng: Phát hành hàng tuần</span>
+
+                <span class="amount-chapter">Số chương: Đang cập nhật</span>
+
+                <span class="view-count">Lượt xem: Đang cập nhật</span>
+
+                <span class="rate">
+                    Đánh giá:
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <i class="far fa-star"></i>
+                </span>
+
+                <span class="category">Thể loại: <b>Action, Drama, Romance, School Life, Shounen</b></span>
+
+                <div class="product-desc">
+                    <hr>
+                    <span>
+                        {{product.Description}}
+                    </span>
+                    <i class="fas fa-info-circle icon"></i>
+                </div>
+
+
+                <div class="btn-container">
+
+                    <div class="btn-readToStart">
+                        <i class="fas fa-book icon"></i> Đọc từ đầu
+                    </div>
+
+                    <div class="btn-follow">
+                        <i class="far fa-bookmark icon"> Yêu thích</i>
+                    </div>
+
+                    <div class="btn btn-buy" ng-click="setItem(product.Product_id)">
+                        <i class="fas fa-shopping-cart" ></i> Đặt mua trọn bộ
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <hr>
+
+        <span class="product-review">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, sit asperiores. Incidunt expedita id optio veritatis mollitia perspiciatis rerum laudantium quidem nemo! Quod deleniti suscipit nemo aliquid veritatis consectetur dolor.
+            A aperiam adipisci ducimus, fugit similique sint ut sit nostrum itaque assumenda esse officia quam voluptates? Odit nemo voluptas animi, blanditiis in repudiandae veniam laborum ipsam quam nesciunt porro ratione.
+            Tenetur impedit ex molestiae commodi ad reprehenderit vel incidunt, laboriosam vero dicta est excepturi! Perspiciatis nobis tempore libero totam deserunt beatae quasi ipsum ad. Nulla dolor ea consectetur officiis distinctio.
+            Incidunt, quo consectetur?
+            <img src="{{product.Image_url}}" alt="" srcset="">
+            @*<img src="https://occ-0-1068-1722.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABSGtQ7VuzVmIMICIfSn0E3T8O68eQKBjm8XpQY86k-nn7sr52oE5lxKJdFUuDMeFgjHgeIQ9SDZZIxcxUI8PvcXw6AVZ.jpg?r=ead" alt="" srcset="">*@
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati earum fuga deserunt eum! Facere mollitia error perferendis aliquid suscipit voluptatibus ea autem accusantium odit ab. Eos culpa mollitia nostrum veritatis!
+            Eaque nulla porro perferendis quaerat quibusdam, quasi iste neque iusto minima non nisi itaque totam debitis illum. Iure eum neque nisi cupiditate quia cumque ex ratione illo, sint, minima sed?
+            Commodi maxime deserunt, magnam esse soluta quisquam, sint aliquid ducimus dolor velit asperiores accusamus accusantium neque modi itaque consequuntur. Ipsum quasi dignissimos obcaecati consequatur iusto at tenetur ab quae a?
+            <img src="{{product.Big_image_url}}" alt="" srcset="">
+            @*<img src="https://product.hstatic.net/200000343865/product/1_288_1e79cde33da74e9ea565af79c6fa3089.jpg" alt="" srcset="">*@
+            Deserunt voluptatibus doloribus explicabo nesciunt. Expedita eius omnis ipsa cumque. Aspernatur unde repudiandae ea. Laborum maxime possimus aliquid impedit fugit cum molestiae cumque sunt vel, optio quaerat!
+            Quaerat alias, vel enim inventore officiis temporibus velit non harum sit iste? Id architecto, optio cum, obcaecati ratione repellendus debitis ea eveniet, nam suscipit fugiat beatae ipsum accusamus mollitia ipsa.
+        </span>
+
+    </div>
+    <script src="~/Public/js/jquery-3.6.0.min.js"></script>
+    <script src="~/Scripts/Controller/angular.min.js"></script>
+    @*<script src="~/Scripts/Controller/Detail.js"></script>*@
+    <script src="~/Scripts/Controller/HomeController.js"></script>
+</body>
+</html>
